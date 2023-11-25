@@ -1,0 +1,51 @@
+<div class="container">
+    <button class="btn btn-success ms-auto mt-3" (click)="applicationAdd()">Add application</button>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <th scope="row">{{ user.user_id }}</th>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.mobile }}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+</div>
+
+<ng-template #addApplicationModal let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title" id="modal-basic-title">Add Application</h5>
+        <button type="button" class="close" (click)="modal.dismiss()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="appName">Name:</label>
+                <input type="text" class="form-control" id="appName" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+                <label for="appEmail">Email:</label>
+                <input type="email" class="form-control" id="appEmail" placeholder="Enter Email">
+            </div>
+            <div class="form-group">
+                <label for="appMobile">Mobile:</label>
+                <input type="text" class="form-control" id="appMobile" placeholder="Enter Mobile">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Close</button>
+    </div>
+</ng-template>
