@@ -1,5 +1,6 @@
 <div class="container">
     <button class="btn btn-success ms-auto mt-3" (click)="applicationAdd()">Add application</button>
+    <button class="btn btn-danger ms-5 mt-3" (click)="logout()">Logout</button>
     <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -24,8 +25,7 @@
 <ng-template #addApplicationModal let-modal>
     <div class="modal-header">
         <h5 class="modal-title" id="modal-basic-title">Add Application</h5>
-        <button type="button" class="close" (click)="modal.dismiss()" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+        <button type="button" class="close btn btn-close" (click)="modal.dismiss()" aria-label="Close">
         </button>
     </div>
     <div class="modal-body">
